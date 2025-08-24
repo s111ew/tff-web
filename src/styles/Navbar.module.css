@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  padding: 10px 40px 30px 40px;
+  justify-content: space-between;
+  color: var(--grey);
+  border-top: 1px solid var(--grey);
+}
+
+.navOptionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navOptionContainer > img {
+  width: 35px;
+}
+
+.active {
+  color: var(--dark-blue);
+}

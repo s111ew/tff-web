@@ -1,0 +1,18 @@
+.header {
+  background-color: var(--dark-blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 0px 30px 0px;
+  gap: 20px;
+}
+
+.logo {
+  width: 30px;
+}
+
+.logoText {
+  font-family: "Hanken Grotesk";
+  font-size: 18px;
+}

@@ -1,0 +1,116 @@
+.workout {
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* .workout > div {
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+} */
+
+.today {
+  padding: 20px 15px;
+  background-color: var(--accent-blue);
+  border-radius: 15px;
+  color: white;
+}
+
+.today > h4 {
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.todayWorkout {
+  position: relative;
+  padding: 10px 15px;
+  border: 1px solid var(--grey);
+  border-radius: 15px;
+  color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.todayWorkout > p:not(.start) {
+  padding: 10px 0px;
+}
+
+.todayWorkout > p:not(.start):not(.todayWorkout > p:first-child) {
+  border-top: 1px solid var(--grey);
+}
+
+.gradient {
+  top: 5;
+  left: 3;
+  position: absolute;
+  width: 94%;
+  height: 94%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 90%
+  );
+}
+
+.start {
+  z-index: 2;
+  position: absolute;
+  bottom: 20px;
+  left: 28%;
+  padding: 5px 20px;
+  background-color: var(--dark-blue);
+  color: white;
+  border-radius: 15px;
+  font-size: 18px;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.week {
+  padding: 20px 20px;
+  display: flex;
+  border: 1px solid var(--grey);
+  border-radius: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.week > div {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+
+.week > div:not(.empty) {
+  border-radius: 5px;
+}
+
+.empty {
+  background-color: var(--accent-grey);
+  border-radius: 50%;
+}
+
+.upperBody {
+  background-color: var(--accent-blue);
+}
+
+.recovery {
+  background-color: var(--accent-green);
+}
+
+.current {
+  position: relative;
+}
+
+.current::after {
+  position: absolute;
+  content: "•";
+  top: -20px;
+}
