@@ -10,8 +10,8 @@ export default function Profile() {
             <li className={styles.user}>
               <div className={styles.userPic}></div>
               <div className={styles.userNameContainer}>
-                <p className={styles.userName}>John Smith</p>
-                <p className={styles.userSince}>Member Since: <span>1 August 2025</span></p>
+                <p className={styles.userName}>J Smith</p>
+                <p className={styles.userSince}>Joined: <span>August 2025</span></p>
               </div>
             </li>
             <div className={styles.divider}></div>

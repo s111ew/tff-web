@@ -1,7 +1,10 @@
 .calendarContainer {
-  max-height: 75%;
+  height: calc(100vh - 205px);
   width: 100%;
   padding: 30px;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .calendar {
@@ -26,39 +29,4 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 5px;
-}
-
-.day {
-  width: 35px;
-  height: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.empty {
-  background-color: var(--accent-grey);
-}
-
-.day:not(.empty) {
-  border-radius: 5px;
-}
-
-.lowerBody {
-  background-color: var(--accent-pink);
-}
-
-.speed {
-  background-color: var(--accent-orange);
-}
-
-.upperBody {
-  background-color: var(--accent-blue);
-}
-
-.recovery {
-  background-color: var(--accent-green);
 }

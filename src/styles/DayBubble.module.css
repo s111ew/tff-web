@@ -1,0 +1,55 @@
+.day {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 2;
+  top: -30px;
+  width: 200%;
+  background-color: var(--accent-grey);
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.today {
+  border: 3px solid var(--dark-blue);
+}
+
+.empty {
+  background-color: var(--accent-grey);
+}
+
+.day:not(.empty) {
+  border-radius: 5px;
+}
+
+.lowerBody {
+  background-color: var(--accent-pink);
+}
+
+.speed {
+  background-color: var(--accent-orange);
+}
+
+.upperBody {
+  background-color: var(--accent-blue);
+}
+
+.recovery {
+  background-color: var(--accent-green);
+}

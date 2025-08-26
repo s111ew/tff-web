@@ -26,6 +26,27 @@ body {
   --grey: #999999;
   height: 100vh;
   width: 100vw;
+  background-color: var(--dark-blue);
+}
+
+.accentBlue {
+  background-color: var(--accent-blue);
+}
+
+.accentGreen {
+  background-color: var(--accent-green);
+}
+
+.accentOrange {
+  background-color: var(--accent-orange);
+}
+
+.accentPink {
+  background-color: var(--accent-pink);
+}
+
+.accentGrey {
+  background-color: var(--accent-grey);
 }
 
 img,

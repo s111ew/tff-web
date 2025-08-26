@@ -1,9 +1,12 @@
 .workout {
-  height: 100%;
+  height: calc(100vh - 205px);
   padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 /* .workout > div {
@@ -14,7 +17,6 @@
 
 .today {
   padding: 20px 15px;
-  background-color: var(--accent-blue);
   border-radius: 15px;
   color: white;
 }
@@ -59,14 +61,15 @@
 .start {
   z-index: 2;
   position: absolute;
+  width: calc(100% - 30px);
   bottom: 20px;
-  left: 28%;
-  padding: 5px 20px;
+  padding: 5px;
   background-color: var(--dark-blue);
   color: white;
-  border-radius: 15px;
+  border-radius: 10px;
   font-size: 18px;
   box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 .week {
@@ -99,6 +102,14 @@
 
 .upperBody {
   background-color: var(--accent-blue);
+}
+
+.lowerBody {
+  background-color: var(--accent-pink);
+}
+
+.speed {
+  background-color: var(--accent-orange);
 }
 
 .recovery {

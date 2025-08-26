@@ -4,6 +4,8 @@
   justify-content: space-between;
   color: var(--grey);
   border-top: 1px solid var(--grey);
+  background-color: white;
+  height: 100px;
 }
 
 .navOptionContainer {
