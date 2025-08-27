@@ -1,13 +1,13 @@
 const workouts = [
   {
+    id: "rest",
     title: "Rest Day",
-    day: 1,
     colourCode: "accentGrey",
     exercises: "none",
   },
   {
+    id: "lower",
     title: "Strength & Power (Lower Body Focus)",
-    day: 2,
     colourCode: "accentPink",
     exercises: [
       {
@@ -79,8 +79,8 @@ const workouts = [
     ],
   },
   {
+    id: "speed",
     title: "Speed & Cardiovascular Endurance",
-    day: 3,
     colourCode: "accentOrange",
     exercises: [
       {
@@ -134,12 +134,13 @@ const workouts = [
     ],
   },
   {
+    id: "training",
     title: "Football Training",
-    day: 4,
     colourCode: "accentGrey",
     exercises: "none",
   },
   {
+    id: "upper",
     title: "Strength & Power (Upper Body Focus)",
     day: 5,
     colourCode: "accentBlue",
@@ -213,8 +214,8 @@ const workouts = [
     ],
   },
   {
+    id: "recovery",
     title: "Mobility & Active Recovery",
-    day: 6,
     colourCode: "accentGreen",
     exercises: [
       {
@@ -262,8 +263,8 @@ const workouts = [
     ],
   },
   {
+    id: "match",
     title: "Match Day",
-    day: 7,
     colourCode: "accentGrey",
     exercises: "none",
   },

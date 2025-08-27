@@ -1,7 +1,7 @@
 import styles from "../../styles/Calendar.module.css"
 import DayBubble from "../DayBubble";
 
-export default function Calendar({ workouts }) {
+export default function Calendar({ user }) {
   const today = new Date();
 
   function createMonthArr(year, month, start, length) {
@@ -23,8 +23,8 @@ export default function Calendar({ workouts }) {
     return {
       id: i,
       value: dayNum,
-      class: workouts.find(workout => workout.day === weekday)?.colourCode,
-      name: workouts.find(workout => workout.day === weekday)?.title,
+      class: user.schedule.find(workout => workout.day === weekday)?.colourCode,
+      name: user.schedule.find(workout => workout.day === weekday)?.title,
       isToday,
     };
   });
