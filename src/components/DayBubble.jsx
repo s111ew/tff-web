@@ -1,20 +1,44 @@
 import styles from "../styles/DayBubble.module.css"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 
-export default function DayBubble({value, className, isToday, workoutName}) {
+export default function DayBubble({ value, className, isToday, name }) {
   const [tooltipOpen, setTooltipOpen] = useState(false);
+  const bubbleRef = useRef(null);
 
-  function onClick() {
-    !tooltipOpen ? setTooltipOpen(true) : setTooltipOpen(false);
+  // Toggle tooltip on bubble click
+  function onClick(e) {
+    e.stopPropagation(); // prevent closing immediately when clicking the bubble
+    setTooltipOpen((prev) => !prev);
   }
 
-  return(
+  useEffect(() => {
+    function handleClickOutside(event) {
+      // If click happens outside of this component, close tooltip
+      if (bubbleRef.current && !bubbleRef.current.contains(event.target)) {
+        setTooltipOpen(false);
+      }
+    }
+
+    if (tooltipOpen) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [tooltipOpen]);
+
+  return (
     <div
+      ref={bubbleRef}
       onClick={onClick}
-      className={`${styles.day} ${styles[className]} ${isToday ? styles.today : ""}`}>
+      className={`${styles.day} ${className} ${isToday ? styles.today : ""}`}>
         {value}
-        <div className={`${styles.tooltip} ${tooltipOpen ? styles.visible : ''}`}>
-          {workoutName}
+        <div className={`${styles.tooltip} ${className} ${tooltipOpen ? styles.visible : ''}`}>
+          {name}
         </div>
     </div>
   )

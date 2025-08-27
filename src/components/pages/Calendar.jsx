@@ -1,36 +1,41 @@
 import styles from "../../styles/Calendar.module.css"
 import DayBubble from "../DayBubble";
 
-export default function Calendar({ workoutMap, workouts }) {
+export default function Calendar({ workouts }) {
   const today = new Date();
 
   function createMonthArr(year, month, start, length) {
-    return Array.from({ length: start + length }, (_, i) => {
-      if (i < start) {
-        return { id: i, value: "", class: "null" };
-      }
+  return Array.from({ length: start + length }, (_, i) => {
+    if (i < start) {
+      return { id: i, value: "", class: "null" };
+    }
 
-      const dayNum = i - start + 1;
-      const isToday =
-        year === today.getFullYear() &&
-        month === today.getMonth() &&
-        dayNum === today.getDate();
+    const dayNum = i - start + 1;
+    const isToday =
+      year === today.getFullYear() &&
+      month === today.getMonth() &&
+      dayNum === today.getDate();
 
-      return {
-        id: i,
-        value: dayNum,
-        class: workoutMap[i % 7] || "empty",
-        isToday,
-        workoutName: workouts.map(workout => workout.day === i % 7).title || "Rest Day"
-      };
-    });
-  }
+    const dateObj = new Date(year, month, dayNum);
+    const jsDay = dateObj.getDay(); // 0=Sun...6=Sat
+    const weekday = jsDay === 0 ? 7 : jsDay; // 1=Mon...7=Sun
+
+    return {
+      id: i,
+      value: dayNum,
+      class: workouts.find(workout => workout.day === weekday)?.colourCode,
+      name: workouts.find(workout => workout.day === weekday)?.title,
+      isToday,
+    };
+  });
+}
+
 
   function renderMonth(monthArr) {
     return (
       <div className={styles.daysContainer}>
         {monthArr.map((day) => (
-          <DayBubble key={day.id} value={day.value} className={day.class} isToday={day.isToday} workoutName={day.workoutName}/>
+          <DayBubble key={day.id} value={day.value} className={day.class} isToday={day.isToday} name={day.name} />
         ))}
       </div>
     );

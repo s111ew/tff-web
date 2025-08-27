@@ -13,13 +13,12 @@
 .tooltip {
   position: absolute;
   z-index: 2;
-  top: -30px;
-  width: 200%;
-  background-color: var(--accent-grey);
+  top: -100%;
   text-align: center;
   padding: 5px;
   border-radius: 5px;
   visibility: hidden;
+  font-size: 12px;
 }
 
 .visible {
@@ -30,11 +29,13 @@
   border: 3px solid var(--dark-blue);
 }
 
-.empty {
+.rest,
+.match,
+.footballTraining {
   background-color: var(--accent-grey);
 }
 
-.day:not(.empty) {
+.day:not(.rest) {
   border-radius: 5px;
 }
 

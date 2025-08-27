@@ -12,16 +12,10 @@ function App() {
   const [currentWorkout, setCurrentWorkout] = useState(null);
   const [currentDate, setCurrentDate] = useState(null);
   const [currentDay, setCurrentDay] = useState(null);
-  const workoutMap = {
-      1: "lowerBody",
-      2: "speed",
-      4: "upperBody",
-      5: "recovery",
-    }
 
   useEffect(() => {
     const today = new Date();
-    const options = { weekday: "long", day: "numeric", month: "long", year: "numeric" };
+    const options = { weekday: "short", day: "numeric", month: "short", year: "numeric" };
   
     let formattedDate = today.toLocaleDateString("en-GB", options);
     formattedDate = formattedDate.replace(",", "");
@@ -45,8 +39,8 @@ function App() {
   return (
     <>
       <Header />
-      {currentPage === 'workout' ? <Workout workout={currentWorkout} date={currentDate} day={currentDay} workoutMap={workoutMap} /> : ''}
-      {currentPage === 'calendar' ? <Calendar workoutMap={workoutMap} workouts={workouts}/> : ''}
+      {currentPage === 'workout' ? <Workout workout={currentWorkout} date={currentDate} day={currentDay} workouts={workouts} /> : ''}
+      {currentPage === 'calendar' ? <Calendar workouts={workouts}/> : ''}
       {currentPage === 'profile' ? <Profile /> : ''}
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </>

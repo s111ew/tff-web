@@ -91,11 +91,11 @@
   color: var(--dark-blue);
 }
 
-.week > div:not(.empty) {
+.week > div:not(.rest) {
   border-radius: 5px;
 }
 
-.empty {
+.rest {
   background-color: var(--accent-grey);
   border-radius: 50%;
 }

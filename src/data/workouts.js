@@ -1,5 +1,11 @@
 const workouts = [
   {
+    title: "Rest Day",
+    day: 1,
+    colourCode: "accentGrey",
+    exercises: "none",
+  },
+  {
     title: "Strength & Power (Lower Body Focus)",
     day: 2,
     colourCode: "accentPink",
@@ -128,6 +134,12 @@ const workouts = [
     ],
   },
   {
+    title: "Football Training",
+    day: 4,
+    colourCode: "accentGrey",
+    exercises: "none",
+  },
+  {
     title: "Strength & Power (Upper Body Focus)",
     day: 5,
     colourCode: "accentBlue",
@@ -248,6 +260,12 @@ const workouts = [
         reps: null,
       },
     ],
+  },
+  {
+    title: "Match Day",
+    day: 7,
+    colourCode: "accentGrey",
+    exercises: "none",
   },
 ];
 
