@@ -2,7 +2,7 @@
   height: calc(100vh - 205px);
   width: 100%;
   padding: 30px;
-  background-color: white;
+  background-color: var(--accent-grey);
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }

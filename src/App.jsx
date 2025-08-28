@@ -11,11 +11,11 @@ function App() {
 
   return (
     user ? (
-      <>
-        <Header />
-        <Content user={user} currentPage={currentPage} />
-        <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      </>
+        <>
+          <Header />
+          <Content user={user} currentPage={currentPage} />
+          <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        </>
       ) : (
         <>
           <Header />

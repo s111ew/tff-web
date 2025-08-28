@@ -69,7 +69,7 @@ export default function LoginForm({ setUser }) {
         )}
 
         <button className={styles.button} type="submit">
-          Sign in
+          Submit
         </button>
       </fieldset>
     </form>

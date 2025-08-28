@@ -2,14 +2,12 @@
   height: calc(100vh - 205px);
   width: 100%;
   padding: 30px;
-  background-color: white;
+  background-color: var(--accent-grey);
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 
 .profile {
-  border-radius: 15px;
-  border: 1px solid var(--grey);
   height: 100%;
   overflow-y: scroll;
   padding: 20px;

@@ -12,7 +12,7 @@ export default function Profile({ user }) {
   return(
     <>
       <div className={styles.profileContainer}>
-        <div className={styles.profile}>
+        <div className={`${styles.profile} container`}>
           <ul className={styles.optionList}>
             <li className={styles.user}>
               <div className={styles.userPic}>{user.firstName[0]}</div>

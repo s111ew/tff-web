@@ -140,7 +140,7 @@ const dummyUser = {
     },
     {
       day: 4,
-      title: "Football Training",
+      title: "Team Training",
       colourCode: "accentGrey",
       exercises: "none",
     },

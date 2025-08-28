@@ -1,7 +1,7 @@
 import styles from "../styles/DayBubble.module.css"
 import { useState, useEffect, useRef } from "react"
 
-export default function DayBubble({ value, className, isToday, name }) {
+export default function DayBubble({ value, className, isToday, name, size }) {
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const bubbleRef = useRef(null);
 
@@ -35,7 +35,7 @@ export default function DayBubble({ value, className, isToday, name }) {
     <div
       ref={bubbleRef}
       onClick={className !== null ? onClick : null}
-      className={`${styles.day} ${className} ${isToday ? styles.today : ""}`}>
+      className={`${styles.day} ${className} ${isToday ? styles.today : ""} ${size === 'L' ? styles.large : styles.small}`}>
         {value}
         <div className={`${styles.tooltip} ${className} ${tooltipOpen ? styles.visible : ''}`}>
           {name}

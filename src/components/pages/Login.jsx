@@ -7,19 +7,21 @@ function Login({ setUser }) {
 
   return(
     <div className={styles.container} onClick={() => setUser(false)}>
-      <div className={styles.formContainer}>
+      <div className={`${styles.formContainer} container`}>
           {screen === "login" ?
           (
             <>
-              <h1>Login</h1>
+              <h1>Sign in</h1>
+              <p className={styles.introText}>Plan smarter, train harder, and track your progress on and off the pitch.</p>
               <LoginForm setUser={setUser} />
-              <p>New to Total Football Fitness? <span onClick={() => {setScreen("signUp")}}>Sign up</span></p>
+              <p className={styles.subtitle}>New to Total Football Fitness? <span onClick={() => {setScreen("signUp")}}>Sign up</span></p>
             </>
           ) : (
             <>
               <h1>Sign Up</h1>
-              <SignUpForm setUser={setUser} />
-              <p>Already have an account? <span onClick={() => {setScreen("login")}}>Log in</span></p>
+              <p className={styles.introText}>Your football fitness journey starts here. Build workouts, stay motivated, and improve your game.</p>
+              <h2>Coming Soon</h2>
+              <p className={styles.subtitle}>Already have an account? <span onClick={() => {setScreen("login")}}>Log in</span></p>
             </>
           )
         }

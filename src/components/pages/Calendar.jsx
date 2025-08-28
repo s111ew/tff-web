@@ -35,7 +35,7 @@ export default function Calendar({ user }) {
     return (
       <div className={styles.daysContainer}>
         {monthArr.map((day) => (
-          <DayBubble key={day.id} value={day.value} className={day.class} isToday={day.isToday} name={day.name} />
+          <DayBubble key={day.id} value={day.value} className={day.class} isToday={day.isToday} name={day.name} size={"S"}/>
         ))}
       </div>
     );
@@ -58,7 +58,7 @@ export default function Calendar({ user }) {
 
   return (
     <div className={styles.calendarContainer}>
-      <div className={styles.calendar}>
+      <div className={`${styles.calendar} container`}>
         {months.map((m, idx) => (
           <div key={idx} className={styles.monthContainer}>
             <h4>{m.name}</h4>

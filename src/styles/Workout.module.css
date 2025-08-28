@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  background-color: white;
+  background-color: var(--accent-grey);
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -96,24 +96,24 @@
 }
 
 .rest {
-  background-color: var(--accent-grey);
+  background-color: var(--accent-grey) !important;
   border-radius: 50%;
 }
 
 .upperBody {
-  background-color: var(--accent-blue);
+  background-color: var(--accent-blue) !important;
 }
 
 .lowerBody {
-  background-color: var(--accent-pink);
+  background-color: var(--accent-pink) !important;
 }
 
 .speed {
-  background-color: var(--accent-orange);
+  background-color: var(--accent-orange) !important;
 }
 
 .recovery {
-  background-color: var(--accent-green);
+  background-color: var(--accent-green) !important;
 }
 
 .current {

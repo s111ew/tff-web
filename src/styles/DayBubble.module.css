@@ -5,9 +5,16 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  font-size: 12px;
   font-weight: 600;
   position: relative;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.large {
+  font-size: 16px;
 }
 
 .tooltip {

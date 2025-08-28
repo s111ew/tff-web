@@ -1,8 +1,13 @@
 import styles from '../../styles/Workout.module.css'
+import { useState } from 'react';
+import Session from '../Session';
+import DayBubble from '../DayBubble';
 
 export default function Workout({ user }) {
+  const [sessionStarted, setSessionStarted] = useState(false);
+
   const today = new Date();
-  const todayDay = today.getDay(); // Sunday = 0, so shift by +1 to match your data
+  const todayDay = today.getDay();
   const todayDate = today.getDate();
 
   // Find today's workout from the schedule
@@ -28,37 +33,44 @@ export default function Workout({ user }) {
     const workoutDay = ((todayDay - 1 + i) % 7) + 1;
     return {
       date: todayDate + i <= daysInCurrentMonth ? todayDate + i : (todayDate + i) - daysInCurrentMonth,
-      colour: user.schedule.find(workout => workout.day === workoutDay)?.colourCode || ''
+      colour: user.schedule.find(workout => workout.day === workoutDay)?.colourCode || '',
+      name: user.schedule.find(workout => workout.day === workoutDay)?.title || ''
     };
   });
 
   const renderedWeek = week.map((d, idx) => (
-    <div 
+    <DayBubble
       key={idx} 
-      className={`${d.colour} ${idx === 0 ? styles.current : ''}`}
-    >
-      {d.date}
-    </div>
+      value={d.date}
+      isToday={idx === 0 ? true : false}
+      size={"L"}
+      name={d.name}
+      className={d.colour}
+    />
   ));
 
   return (
-    <div className={styles.workout}>
-      <div className={`${todayWorkout?.colourCode || ''} ${styles.today}`}>
-        <h4>{getTodayDate()}</h4>
-        <p>{todayWorkout?.title}</p>
-      </div>
+      sessionStarted ? (
+        <Session workout={todayWorkout} user={user} />
+      ) : (
+        <div className={styles.workout}>
+          <div className={`${todayWorkout?.colourCode || ''} ${styles.today} container`}>
+            <h4>{getTodayDate()}</h4>
+            <p>{todayWorkout?.title}</p>
+          </div>
 
-      {renderedWorkoutList && (
-        <div className={styles.todayWorkout}>
-          {renderedWorkoutList}
-          <div className={styles.gradient}></div>
-          <p className={styles.start}>Start Session</p>
+          {renderedWorkoutList && (
+            <div className={`${styles.todayWorkout} container`}>
+              {renderedWorkoutList}
+              <div className={styles.gradient}></div>
+              <p onClick={() => setSessionStarted(true)} className={styles.start}>Start Session</p>
+            </div>
+          )}
+
+          <div className={`${styles.week} container`} >
+            {renderedWeek}
+          </div>
         </div>
-      )}
-
-      <div className={styles.week}>
-        {renderedWeek}
-      </div>
-    </div>
+      )
   );
 }
