@@ -1,6 +1,7 @@
 import { useState } from "react"
 import styles from "../../styles/Login.module.css"
 import LoginForm from "../LoginForm";
+import signInIcon from "../../assets/sign_in.svg"
 
 function Login({ setUser }) {
   const [screen, setScreen] = useState("login");
@@ -11,6 +12,9 @@ function Login({ setUser }) {
           {screen === "login" ?
           (
             <>
+              <div className={styles.imageContainer}>
+                <img src={signInIcon} alt="sign in icon" />
+              </div>
               <h1>Sign in</h1>
               <p className={styles.introText}>Plan smarter, train harder, and track your progress on and off the pitch.</p>
               <LoginForm setUser={setUser} />

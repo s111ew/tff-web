@@ -1,34 +1,33 @@
 import styles from "../../styles/Profile.module.css"
+import { useState } from "react";
+import Home from "../profile/Home";
+import User from "../profile/User";
+import Benchmarking from "../profile/Benchmarking";
+import Settings from "../profile/Settings";
+import Contact from "../profile/Contact";
 import arrow from "../../assets/arrow_right_grey.svg"
 
 export default function Profile({ user }) {
-
-  function formatJoinedDate(dateString) {
-    const date = new Date(dateString.replace(" ", "T"));
-    const options = { month: 'short', year: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
-  }
+  const [page, setPage] = useState("home")
 
   return(
     <>
       <div className={`${styles.profile} container`}>
-        <ul className={styles.optionList}>
-          <li className={styles.user}>
-            <div className={styles.userPic}>{user.firstName[0]}</div>
-            <div className={styles.userNameContainer}>
-              <p className={styles.userName}>{user.firstName[0]}. {user.secondName}</p>
-              <p className={styles.userSince}>Member Since: {formatJoinedDate(user.joined)}</p>
+        {page === "home" ? (
+          <Home user={user} setPage={setPage} />
+        ) : (
+          <>
+            <div className={styles.backButton} onClick={() => setPage("home")} >
+              <img src={arrow} alt="back arrow" style={{transform: "rotate(-180deg)"}} />
+              <p>Back</p>
             </div>
-          </li>
-          <div className={styles.divider}></div>
-          <li className={styles.optionItem}>Profile <img className={styles.arrowIcon} src={arrow} alt="Arrow icon" /></li>
-          <div className={styles.divider}></div>
-          <li className={styles.optionItem}>Benchmarking <img className={styles.arrowIcon} src={arrow} alt="Arrow icon" /></li>
-          <div className={styles.divider}></div>
-          <li className={styles.optionItem}>Settings <img className={styles.arrowIcon} src={arrow} alt="Arrow icon" /></li>
-          <div className={styles.divider}></div>
-          <li className={styles.optionItem}>Contact <img className={styles.arrowIcon} src={arrow} alt="Arrow icon" /></li>
-        </ul>
+            {page === "user" && <User user={user} />}
+            {page === "benchmarking" && <Benchmarking user={user} />}
+            {page === "contact" && <Contact user={user} />}
+            {page === "settings" && <Settings user={user} />}
+          </>
+        )
+        }
       </div>
     </>
   )

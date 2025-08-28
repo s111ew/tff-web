@@ -3,6 +3,7 @@ const dummyUser = {
   secondName: "Smith",
   email: "example@example.com",
   joined: "2025-08-27 13:42:10",
+  dateOfBirth: "1997-01-09",
   schedule: [
     {
       day: 1,
@@ -273,6 +274,17 @@ const dummyUser = {
       exercises: "none",
     },
   ],
+  profile: {
+    height: 178,
+    weight: 78,
+    workoutsCompleted: 16,
+    weightLifted: 1580,
+    distanceCovered: 25600,
+  },
+  settings: {
+    weightIsMetric: true,
+    lengthIsMetric: true,
+  },
 };
 
 export default dummyUser;
