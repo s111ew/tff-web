@@ -11,26 +11,24 @@ export default function Profile({ user }) {
 
   return(
     <>
-      <div className={styles.profileContainer}>
-        <div className={`${styles.profile} container`}>
-          <ul className={styles.optionList}>
-            <li className={styles.user}>
-              <div className={styles.userPic}>{user.firstName[0]}</div>
-              <div className={styles.userNameContainer}>
-                <p className={styles.userName}>{user.firstName[0]}. {user.secondName}</p>
-                <p className={styles.userSince}>Member Since: {formatJoinedDate(user.joined)}</p>
-              </div>
-            </li>
-            <div className={styles.divider}></div>
-            <li className={styles.optionItem}>Profile <img className={styles.arrowIcon} src={arrow} alt="Arrow icon" /></li>
-            <div className={styles.divider}></div>
-            <li className={styles.optionItem}>Benchmarking <img className={styles.arrowIcon} src={arrow} alt="Arrow icon" /></li>
-            <div className={styles.divider}></div>
-            <li className={styles.optionItem}>Settings <img className={styles.arrowIcon} src={arrow} alt="Arrow icon" /></li>
-            <div className={styles.divider}></div>
-            <li className={styles.optionItem}>Contact <img className={styles.arrowIcon} src={arrow} alt="Arrow icon" /></li>
-          </ul>
-        </div>
+      <div className={`${styles.profile} container`}>
+        <ul className={styles.optionList}>
+          <li className={styles.user}>
+            <div className={styles.userPic}>{user.firstName[0]}</div>
+            <div className={styles.userNameContainer}>
+              <p className={styles.userName}>{user.firstName[0]}. {user.secondName}</p>
+              <p className={styles.userSince}>Member Since: {formatJoinedDate(user.joined)}</p>
+            </div>
+          </li>
+          <div className={styles.divider}></div>
+          <li className={styles.optionItem}>Profile <img className={styles.arrowIcon} src={arrow} alt="Arrow icon" /></li>
+          <div className={styles.divider}></div>
+          <li className={styles.optionItem}>Benchmarking <img className={styles.arrowIcon} src={arrow} alt="Arrow icon" /></li>
+          <div className={styles.divider}></div>
+          <li className={styles.optionItem}>Settings <img className={styles.arrowIcon} src={arrow} alt="Arrow icon" /></li>
+          <div className={styles.divider}></div>
+          <li className={styles.optionItem}>Contact <img className={styles.arrowIcon} src={arrow} alt="Arrow icon" /></li>
+        </ul>
       </div>
     </>
   )

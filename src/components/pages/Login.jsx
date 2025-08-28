@@ -6,7 +6,7 @@ function Login({ setUser }) {
   const [screen, setScreen] = useState("login");
 
   return(
-    <div className={styles.container} onClick={() => setUser(false)}>
+    <>
       <div className={`${styles.formContainer} container`}>
           {screen === "login" ?
           (
@@ -26,7 +26,7 @@ function Login({ setUser }) {
           )
         }
       </div>
-    </div>
+    </>
   )
 }
 

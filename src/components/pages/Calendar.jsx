@@ -57,7 +57,7 @@ export default function Calendar({ user }) {
   });
 
   return (
-    <div className={styles.calendarContainer}>
+    <>
       <div className={`${styles.calendar} container`}>
         {months.map((m, idx) => (
           <div key={idx} className={styles.monthContainer}>
@@ -66,6 +66,6 @@ export default function Calendar({ user }) {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }

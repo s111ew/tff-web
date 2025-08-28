@@ -2,6 +2,7 @@
   width: 35px;
   height: 35px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -33,7 +34,9 @@
 }
 
 .today {
-  border: 3px solid var(--dark-blue);
+  border-radius: 50% !important;
+  background-color: var(--dark-blue);
+  color: white !important;
 }
 
 .rest,

@@ -53,24 +53,28 @@ export default function Workout({ user }) {
       sessionStarted ? (
         <Session workout={todayWorkout} user={user} />
       ) : (
-        <div className={styles.workout}>
+        <>
           <div className={`${todayWorkout?.colourCode || ''} ${styles.today} container`}>
             <h4>{getTodayDate()}</h4>
             <p>{todayWorkout?.title}</p>
           </div>
 
-          {renderedWorkoutList && (
+          {renderedWorkoutList ? (
             <div className={`${styles.todayWorkout} container`}>
               {renderedWorkoutList}
               <div className={styles.gradient}></div>
               <p onClick={() => setSessionStarted(true)} className={styles.start}>Start Session</p>
+            </div>
+          ) : (
+            <div className={`${styles.todayWorkout} container`}>
+              <p>No Session Today</p>
             </div>
           )}
 
           <div className={`${styles.week} container`} >
             {renderedWeek}
           </div>
-        </div>
+        </>
       )
   );
 }

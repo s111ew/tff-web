@@ -35,11 +35,12 @@ export default function DayBubble({ value, className, isToday, name, size }) {
     <div
       ref={bubbleRef}
       onClick={className !== null ? onClick : null}
-      className={`${styles.day} ${className} ${isToday ? styles.today : ""} ${size === 'L' ? styles.large : styles.small}`}>
-        {value}
+      className={`${styles.day} ${isToday ? styles.today : ""} ${size === 'L' ? styles.large : styles.small}`}>
+        <p>{value}</p>
         <div className={`${styles.tooltip} ${className} ${tooltipOpen ? styles.visible : ''}`}>
           {name}
         </div>
+        <div className={`${className} indicator`}></div>
     </div>
   )
 }

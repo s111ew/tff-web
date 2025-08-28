@@ -1,11 +1,10 @@
 .navbar {
   display: flex;
-  padding: 10px 40px 30px 40px;
+  padding: 20px 40px 20px 40px;
   justify-content: space-between;
   color: var(--grey);
-  border-top: 1px solid var(--grey);
-  background-color: white;
   height: 100px;
+  margin-top: auto;
 }
 
 .navOptionContainer {

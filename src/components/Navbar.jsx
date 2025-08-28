@@ -8,21 +8,19 @@ import profileImgActive from '../assets/profile_blue.svg'
 
 export default function Navbar({currentPage, setCurrentPage}) {
   return(
-    <>
-      <div className={styles.navbar}>
-        <div className={styles.navOptionContainer} onClick={() => setCurrentPage('workout')}>
-          <img src={currentPage === 'workout' ? workoutImgActive : workoutImg} alt="Workout" />
-          <p className={currentPage === 'workout' ? styles.active : ''}>Workout</p>
-        </div>
-        <div className={styles.navOptionContainer} onClick={() => setCurrentPage('calendar')}>
-          <img src={currentPage === 'calendar' ? calendarImgActive : calendarImg} alt="Calendar" />
-          <p className={currentPage === 'calendar' ? styles.active : ''}>Calendar</p>
-        </div>
-        <div className={styles.navOptionContainer} onClick={() => setCurrentPage('profile')}>
-          <img src={currentPage === 'profile' ? profileImgActive : profileImg} alt="Profile" />
-          <p className={currentPage === 'profile' ? styles.active : ''}>Profile</p>
-        </div>
+    <div className={`${styles.navbar} container`}>
+      <div className={styles.navOptionContainer} onClick={() => setCurrentPage('workout')}>
+        <img src={currentPage === 'workout' ? workoutImgActive : workoutImg} alt="Workout" />
+        <p className={currentPage === 'workout' ? styles.active : ''}>Workout</p>
       </div>
-    </>
+      <div className={styles.navOptionContainer} onClick={() => setCurrentPage('calendar')}>
+        <img src={currentPage === 'calendar' ? calendarImgActive : calendarImg} alt="Calendar" />
+        <p className={currentPage === 'calendar' ? styles.active : ''}>Calendar</p>
+      </div>
+      <div className={styles.navOptionContainer} onClick={() => setCurrentPage('profile')}>
+        <img src={currentPage === 'profile' ? profileImgActive : profileImg} alt="Profile" />
+        <p className={currentPage === 'profile' ? styles.active : ''}>Profile</p>
+      </div>
+    </div>
   )
 }

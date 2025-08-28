@@ -1,12 +1,3 @@
-.container {
-  height: 100%;
-  width: 100%;
-  padding: 30px;
-  background-color: var(--accent-grey);
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
 .formContainer {
   padding: 20px;
   display: flex;
@@ -47,6 +38,7 @@
 
 .field {
   background-color: var(--accent-grey);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1) inset;
   border: none;
   border-radius: 5px;
   padding: 5px 5px 5px 35px;
